@@ -1,118 +1,370 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import React from "react";
+import Image from 'next/image';
+import styles from '../styles/Home.module.scss';
+import { useEffect , useState } from "react";
 
 export default function Home() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <div className="h-svh" >
+
+      </div>
+      <div className="top-20 bottom-0 w-full px-5 lg:px-[70px] sm:px-[45px] relative" >
+        <div className="lg:mt-[73px] lg:mb-[300px] md:mb-[100px] relative lg:top-0 -top-[120px]" >
+          <h2 className="text-left max-w-[1152px] flex flex-wrap uppercase mx-auto text-[#000] lg:text-[40px] lg:lg:leading-[1.25]
+           md:leading-[24px] md:text-3xl text-[22px] font-NeueMontreal-Regular font-normal" >
+            <div className="flex relative items-center" >
+              <span className="flex mr-3 relative ml-[40px]" style={{ opacity: Math.min(1, scrollY / 700) }}> 
+                <span className="absolute opacity-[0.3] ml-[40px]" >Talented</span>
+                <span className="ml-[40px]" >Talented</span>
+
+              </span>
+
+            </div>
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 50) / 700) }}>
+                <span className="absolute opacity-[0.3]" >frontend</span>
+                <span className="" >frontend</span>
+
+              </span>
+
+            </div>
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 100) / 700) }}>
+                <span className="absolute opacity-[0.3]" >web</span>
+                <span className="" >web</span>
+
+              </span>
+              </div>
+
+              <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 150) / 700) }}>
+                <span className="absolute opacity-[0.3]" >and</span>
+                <span className="" >and</span>
+
+              </span>
+              </div>
+
+              <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 200) / 700) }}>
+                <span className="absolute opacity-[0.3]" >mobile</span>
+                <span className="" >mobile</span>
+
+              </span>
+              </div>
+
+              <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 220) / 500) }}>
+                <span className="absolute opacity-[0.3] font-NeueMontreal-Bold" >developer</span>
+                <span className="font-NeueMontreal-Bold" >developer</span>
+
+              </span>
+              </div>
+
+              <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 230) / 500) }}>
+                <span className="absolute opacity-[0.3]" >crafting</span>
+                <span className="" >crafting</span>
+
+              </span>
+              </div>
+
+              <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 240) / 500) }}>
+                <span className="absolute opacity-[0.3]" >elegant,</span>
+                <span className="" >elegant,</span>
+
+              </span>
+              </div>
+
+              <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 280) / 500) }}>
+                <span className="absolute opacity-[0.3]" ></span>
+                <span className="" ></span>
+
+              </span>
+              </div>
+
+              <div className="flex relative items-center" >
+                <Image
+                src="shuriken.svg" alt="shurikenicon" loading="lazy" width={36} height={36} decoding="async" 
+                style={{ transform: `rotate(${scrollY / 5}deg)`, opacity: 0.7}} />
+
+                <span className="mr-3 relative ml-[10px]" style={{ opacity: Math.min(1, (scrollY - 290) / 500) }}>
+                  <span className="absolute opacity-[0.3] ml-[10px]" >modern</span>
+                  <span className="ml-[10px]" style={{opacity: 1}}>modern</span>
+
+                </span>
+
+              </div>
+
+              <div className="flex relative items-center" >
+                <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 300) / 500) }}>
+                  <span className="absolute opacity-[0.3]" >designs. </span>
+                  <span className="" >designs.</span>
+                </span>
+
+              </div>
+
+              <div  className="flex relative items-center" >
+                <span className="mr-3 relative md:ml-[20px]" style={{ opacity: Math.min(1, (scrollY - 310) / 500) }}>
+                  <span className="absolute opacity-[0.3] md:ml-[20px]" >Blending</span>
+                  <span className="md:ml-[20px]" >Blending</span>
+
+                </span>
+
+              </div>
+
+              <div  className="flex relative items-center" >
+                <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 320) / 500) }}>
+                  <span className="absolute opacity-[0.3]" >creativity</span>
+                  <span className="" >creativity</span>
+
+                </span>
+
+              </div>
+
+              <div  className="flex relative items-center" >
+                <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 330) / 500) }}>
+                  <span className="absolute opacity-[0.3]" >with</span>
+                  <span className="" >with</span>
+
+                </span>
+
+              </div>
+
+              <div  className="flex relative items-center" >
+                <span className="mr-3 relative md:ml-[40px]" style={{ opacity: Math.min(1, (scrollY - 340) / 500) }}>
+                  <span className="absolute opacity-[0.3] md:ml-[40px]" >tech</span>
+                  <span className="md:ml-[40px]" >tech</span>
+
+                </span>
+
+              </div>
+
+              <div className="flex relative items-center" >
+                <span className="relative ml-[20px] mr-[20px] my-[0px] items-center flex justify-center" style={{ opacity: Math.min(1, (scrollY - 350) / 500) }}>
+                  <span className="absolute opacity-[0.3] ml-[20px] mr-[20px] items-center flex justify-center" >-</span>
+                  <span className="ml-[20px] mr[-20px] my-0 items-center flex justify-center" >-</span>
+                </span>
+
+              </div>
+
+              <div className="flex relative items-center" >
+                <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 360) / 500) }}>
+                  <span className="absolute opacity-[0.3]" >to</span>
+                  <span className=""  >to</span>
+
+                </span>
+
+              </div>
+
+              <div className="flex relative items-center" >
+                <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 370) / 500) }}>
+                  <span className="absolute opacity-[0.3]" >deliver</span>
+                  <span className=""  >deliver</span>
+
+                </span>
+
+              </div>
+
+              <div className="flex relative items-center" >
+                <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 380) / 500) }}>
+                  <span className="absolute opacity-[0.3]" >captivating</span>
+                  <span className="" >captivating</span>
+
+                </span>
+
+              </div>
+
+              <div className="flex relative items-center" >
+                <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 390) / 500) }}>
+                  <span className="absolute opacity-[0.3]" >user</span>
+                  <span className=""  >user</span>
+
+                </span>
+
+              </div>
+
+              <div className="flex relative items-center" >
+                <span className="mr-3 relative font-NeueMontreal-Bold" style={{ opacity: Math.min(1, (scrollY - 400) / 500) }} >
+                  <span className="absolute opacity-[0.3] font-NeueMontreal-Bold" >experiences.</span>
+                  <span className="font-NeueMontreal-Bold" >experiences</span>
+
+                </span>
+
+              </div>
+
+          </h2>
+
+          <h2 className="text-left max-w-[1152px] mt-[67px] flex flex-wrap uppercase mx-auto text-[#000] lg:text-[40px] lg:lg:leading-[1.25] md:leading-[36px] leading-[24px] md:text-3xl text-[22px] font-NeueMontreal-Regular font-normal" >
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative ml-[40px]" style={{ opacity: Math.min(1, (scrollY - 600) / 500) }}>
+                <span className="absolute opacity-[0.3] ml-[40px]" >web</span>
+                <span className="ml-[40px]" >web</span>
+
+              </span>
+
+            </div>
+
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 610) / 500) }}>
+                <span className="absolute opacity-[0.3]" >experiences</span>
+                <span className="" >experiences</span>
+
+              </span>
+
+            </div>
+
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 620) / 500) }}>
+                <span className="absolute opacity-[0.3]" >built,</span>
+                <span className="" >built,</span>
+
+              </span>
+
+            </div>
+
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative font-NeueMontreal-Bold" style={{ opacity: Math.min(1, (scrollY - 630) / 500) }}>
+                <span className="absolute opacity-[0.3] font-sans" >guitar</span>
+                <span className="font-NeueMontreal-Bold" >guitar</span>
+
+              </span>
+
+            </div>
+
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 640) / 500) }}>
+                <span className="absolute opacity-[0.3]" >played,</span>
+                <span className="" >played,</span>
+
+              </span>
+
+            </div>
+
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 650) / 500) }}>
+                <span className="absolute opacity-[0.3]" >the</span>
+                <span className="" >the</span>
+
+              </span>
+
+            </div>
+
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 660) / 500) }}>
+                <span className="absolute opacity-[0.3]" >universe</span>
+                <span className="" >universe</span>
+
+              </span>
+
+            </div>
+
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 680) / 500) }}>
+                <span className="absolute opacity-[0.3]" >researched</span>
+                <span className="" >researched</span>
+
+              </span>
+
+            </div>
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 700) / 500) }}>
+                <span className="absolute opacity-[0.3]" >-</span>
+                <span className="" >-</span>
+
+              </span>
+
+            </div>
+
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 720) / 500) }}>
+                <span className="absolute opacity-[0.3]" >I</span>
+                <span className="" >I</span>
+
+              </span>
+
+            </div>
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 740) / 500) }}>
+                <span className="absolute opacity-[0.3]" >constant</span>
+                <span className="" >constant</span>
+
+              </span>
+
+            </div>
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 770) / 500) }}>
+                <span className="absolute opacity-[0.3]" >weave</span>
+                <span className="" >weave</span>
+
+              </span>
+
+            </div>
+
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 800) / 500) }}>
+                <span className="absolute opacity-[0.3]" >my</span>
+                <span className="" >my</span>
+
+              </span>
+
+            </div>
+
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 820) / 500) }}>
+                <span className="absolute opacity-[0.3]" >passions</span>
+                <span className="" >passions</span>
+
+              </span>
+
+            </div>
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 840) / 500) }}>
+                <span className="absolute opacity-[0.3]" >into</span>
+                <span className="" >into</span>
+
+              </span>
+
+            </div>
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 860) / 500) }}>
+                <span className="absolute opacity-[0.3]" >life's</span>
+                <span className="" >life's</span>
+
+              </span>
+
+            </div>
+            <div className="flex relative items-center" >
+              <span className="mr-3 relative" style={{ opacity: Math.min(1, (scrollY - 870) / 500) }}>
+                <span className="absolute opacity-[0.3]" >tapestry.</span>
+                <span className="" >tapestry.</span>
+
+              </span>
+
+            </div>
+          </h2>
+
         </div>
+        
+
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <div className="h-svh"></div>
     </main>
   );
 }

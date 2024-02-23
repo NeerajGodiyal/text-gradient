@@ -13,7 +13,20 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      
     },
+    fontFamily: {
+      sans: [
+        'NeueMontreal-LightItalic', // Set NeueMontreal-LightItalic as default
+        'NeueMontreal-Bold',
+        'NeueMontreal-Regular',
+        'NeueMontreal-Light',
+        'NeueMontreal-Medium',
+        'NeueMontreal-Italic',
+        'NeueMontreal-BoldItalic',
+        'NeueMontreal-MediumItalic',
+      ],
+    }
   },
   plugins: [],
 };

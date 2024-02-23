@@ -2,32 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+@font-face {
+  font-family: 'Main';
+  src: url('../../public/fonts/NeueMontreal-Regular.otf') format('opentype'); /* Regular */
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: 'NeueMontreal';
+  src: url('../../public/fonts/NeueMontreal-Bold.otf') format('opentype'); /* Bold */
+  font-weight: bold;
+  font-style: normal;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@font-face {
+  font-family: 'NeueMontreal';
+  src: url('../../public/fonts/NeueMontreal-Italic.otf') format('opentype'); /* Italic */
+  font-style: italic;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@font-face {
+  font-family: 'NeueMontreal';
+  src: url('../../public/fonts/NeueMontreal-BoldItalic.otf') format('opentype'); /* Bold Italic */
+  font-weight: bold;
+  font-style: italic;
 }
+
+@font-face {
+  font-family: 'NeueMontreal';
+  src: url(../../public/fonts/NeueMontreal-LightItalic.otf) format('opentype'); /* Light Italic */
+  font-weight: 300;
+  font-style: italic;
+
+}
+
+@font-face {
+  font-family: NeueMontreal;
+  src: url(../../public/fonts/NeueMontreal-Medium.otf) format('opentype'); /* Medium */
+  font-weight: 500;
+  font-style: normal;
+}
+

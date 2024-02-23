@@ -12,7 +12,7 @@
 @font-face {
   font-family: 'NeueMontreal';
   src: url('../../public/fonts/NeueMontreal-Bold.otf') format('opentype'); /* Bold */
-  font-weight: bold;
+  font-weight: bolder;
   font-style: normal;
 }
 
@@ -30,7 +30,7 @@
 }
 
 @font-face {
-  font-family: 'NeueMontreal';
+  font-family: 'Main';
   src: url(../../public/fonts/NeueMontreal-LightItalic.otf) format('opentype'); /* Light Italic */
   font-weight: 300;
   font-style: italic;

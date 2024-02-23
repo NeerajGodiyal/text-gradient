@@ -8,6 +8,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -17,14 +18,8 @@ const config: Config = {
     },
     fontFamily: {
       sans: [
-        'NeueMontreal-LightItalic', // Set NeueMontreal-LightItalic as default
-        'NeueMontreal-Bold',
-        'NeueMontreal-Regular',
-        'NeueMontreal-Light',
-        'NeueMontreal-Medium',
-        'NeueMontreal-Italic',
-        'NeueMontreal-BoldItalic',
-        'NeueMontreal-MediumItalic',
+        'system-ui',
+
       ],
     }
   },
